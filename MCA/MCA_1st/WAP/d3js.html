@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>D3JS</title>
+        <meta charset="UTF-8">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            svg rect{
+                fill:orange;
+                line-height: 25px;
+                stroke: pink;
+            }
+            svg text{
+                color:blue;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <script language="javascript">
+            var data1 = `[
+                {
+                  "name":"shivaputra",
+                  "age":21  
+                },
+                {
+                    "name":"Amar",
+                    "age":22
+                },
+                {
+                    "name":"Siddharudh",
+                    "age":23
+                },
+                {
+                    "name":"sachin",
+                    "age":20
+                }
+            ]`;
+            var data = JSON.parse(data1);
+            var width = 500;
+            var height = 7000;
+            var scalefactor = 20;
+            var barheight = 30;
+            var graph = d3.select("body").append("svg").attr("width",width).attr("height",height);
+            var bar = graph.selectAll("g").data(data).enter().append("g")
+            .attr("transform", function(d,i){return "translate(0,"+i*barheight + ")";});
+            bar.append("rect").attr("width",function(d){
+                return d.age*scalefactor;
+            }).attr("height", barheight-1);
+
+            bar.append("text").attr("x",function(d){
+                return d.age*scalefactor;
+            }).attr("y",barheight/2).attr("dy","0.35em").text(function (d){
+                return d.name;});
+        </script>
+    </body>
+</html>

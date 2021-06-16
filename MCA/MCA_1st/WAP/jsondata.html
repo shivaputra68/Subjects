@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON </title>
+        <meta charset="UTF-8"> 
+        <script>
+            function student(){
+                var students = [
+                    {
+                        "id":"RVCE20MCA035",
+                        "name":"shivaputra",
+                        "branch":"MCA"
+                    },
+                    {
+                        "id":"RVCE20BTECH035",
+                        "name":"siddharudh",
+                        "branch":"BTECH"
+                    },
+                    {
+                        "id":"RVCE20MTECH035",
+                        "name":"Naveen",
+                        "branch":"MTECH"
+                    }
+                ]
+                var table = "<table><tr><th>ID</th><th>NAME</th><th>BRANCH</th></tr>";
+
+                    students.forEach(function (d) {
+                        table += "<tr><td>"+d.id+"</td><td>"+d.name+
+                            "</td><td>"+d.branch+"</td></tr>";
+                    });
+                    table += "</table>";
+                document.getElementById("tbl1").innerHTML = table;
+            }
+        </script>
+
+    </head>
+    <body>
+        <input type="button" value = "GET RESULT" id = "btn1" onclick="student()">
+
+        <table  border = "1" id = "tbl1"></table>
+    </body>
+</html>

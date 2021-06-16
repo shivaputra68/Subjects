@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LOGIN page</title>
+        <meta charset="UTF-8">
+        <style>
+            h1{
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: xx-large;
+                color:green;
+                text-decoration: underline;
+            }
+            fieldset{
+                background-color:blueviolet;
+                margin-left : 30em;
+                margin-right: 30em;
+                color:white;
+                font-size: larger;
+            }
+            #b1,#b2{
+                background-color: greenyellow;
+                border-radius: 0.1em;
+                font-size: large;
+                padding:0.2em;
+            }
+            #d1{
+                background-color: lightsteelblue;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+        <div id="d1"><hr><hr><h1>LOGIN PAGE</h1><hr><hr></div>
+        <br><br>
+        <fieldset>
+            <legend>Login</legend>
+            <label id="l1">USERNAME : </label>
+            <input type="text" id="t1"><br><br>
+            <label id="l2">PASSWORD : </label>
+            <input type="password" id="t2">
+            <br><br>
+            <input type="submit" id="b1" value="LOGIN" onclick="check()"/>
+            <input type="reset" id="b2" value="CLEAR" >
+        </fieldset>
+        </form>
+        <script type="text/javascript">
+           var user = /^[1A-ZA-Z0-90-9A-ZA-ZA-Z0-90-9]{10}$/;
+           var pwd = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%&*]).{8,}$/
+
+           function check(){
+               var tuser = document.getElementById('t1').value;
+               var tpwd = document.getElementById('t2').value;
+
+               if(!user.test(tuser) || !pwd.test(tpwd)){
+                   alert("INVALID USERNAME/PASSWORD");
+               }
+               else{
+                   alert("WELCOME");
+                   var d = new Date();
+                   document.write(d);
+                   document.body.bgColor="red";
+               }
+           }
+        </script>
+    </body>
+</html>

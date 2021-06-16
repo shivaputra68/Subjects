@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <id>RVCE20MCA035</id>
+        <name>Shivaputra</name>
+        <branch>MCA</branch>
+    </student>
+    <student>
+        <id>RVCE20MCA049</id>
+        <name>Bharathram</name>
+        <branch>MCA</branch>
+    </student>
+    <student>
+        <id>RVCE20MECH120</id>
+        <name>Siddharudh</name>
+        <branch>Mechanical</branch>
+    </student>
+    <student>
+        <id>RVCE20MCA011</id>
+        <name>Naveen</name>
+        <branch>MTECH</branch>
+    </student>
+</students>
