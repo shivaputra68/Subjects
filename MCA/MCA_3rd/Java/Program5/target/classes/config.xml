@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id = "customer" class="lab.programs.Program5.Customer">
+	<property name="age" value="1234"></property>
+	<property name="name" value="Shiva"></property>
+	<property name="address" value="Bidar"></property>
+	
+</bean>
+
+<bean id="ticket" class="lab.programs.Program5.Ticket">
+	<property name="tid" value="15486"></property>
+	<property name="price" value="4859.00"></property>
+	<property name="destination" value="Bengaluru"></property>
+	<property name="cus" ref="customer"></property>
+</bean>
+        
+</beans>
